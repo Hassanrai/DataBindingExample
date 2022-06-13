@@ -12,7 +12,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this,R.layout.activity_main)
-        val quoteObj = Quote("Love is Beautiful.", "Hassan")
+        val quoteObj = Quote("You do or do not do, their is no try.", "Funny")
         binding.quote = quoteObj
     }
 }
