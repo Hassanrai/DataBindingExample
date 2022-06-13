@@ -5,8 +5,8 @@
 
     <data>
         <variable
-            name="quote"
-            type="bismillah.kotlin.databindingexample.Quote" />
+            name="mainViewModel"
+            type="bismillah.kotlin.databindingexample.MainViewModel" />
     </data>
     
     <LinearLayout
@@ -21,14 +21,22 @@
             android:textSize="28sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{quote.text}" />
+            android:text="@{mainViewModel.quoteLiveData}" />
 
-        <TextView
-            android:id="@+id/quoteAuthor"
+        <Button
+            android:id="@+id/btnUpdate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{quote.name}"
-            android:textSize="24sp" />
+            android:onClick="@{()-> mainViewModel.updateButton()}"
+            android:layout_marginTop="16dp"
+            android:text="Update Text"/>
+
+        <EditText
+            android:id="@+id/quoteEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@={mainViewModel.quoteLiveData}"/>
+
 
     </LinearLayout>
 </layout>
